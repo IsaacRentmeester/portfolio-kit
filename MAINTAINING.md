@@ -14,3 +14,4 @@
 - Thresholds (Isaac's call, 2026-10-28): every optional section has a minimum in `config` `thresholds`; below it,
   `services/sections` hides the section and its sidebar link so thin profiles don't get padded. The sample person
   clears every threshold on purpose (hometown is Fargo so the map passes the 150-mile rule).
+- Social thumbnail: `assets/social/thumbnail.html` → headless Chrome `--window-size=1200,627 --screenshot` → `portfolio-kit-thumbnail.jpg` (used on Isaac's LinkedIn project; also good as the GitHub social preview).
