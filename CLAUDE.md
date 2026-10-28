@@ -8,6 +8,30 @@ Work through the steps in order. Each step ends with a **checkpoint**: show the 
 and get a yes before you move on. Keep messages short and plain: most people using this are students,
 not developers. Explain what they need to *do* or *decide*, not how the code works.
 
+## ▶ Start here: your first reply in every new chat
+
+**Whatever the person's first message is** ("hi", "start", "help", a question, anything), check the site's
+state before answering:
+
+- **Still the sample** (`config/site.config.js` says `"Jordan"` / `"Example"`) → they just downloaded the kit.
+  Don't wait to be asked and don't explain the kit at length. Reply with a 2-line welcome, then go
+  straight into **Step 1: Gather** and ask for everything in one message: résumé, LinkedIn, photos, the
+  questions. Also look in `my-info/` first: if files are already there, say what you found and ask only
+  for what's missing.
+- **Already filled in** → they're coming back to update. Ask what changed (new job, project, photo) and
+  follow "Updating later" in Step 8.
+
+Template for that first reply (adapt the wording, keep it short):
+
+> 👋 Let's build your portfolio site. ~45 minutes, and I'll do the heavy lifting. First I need:
+> 1. **Your résumé**: drag the PDF/Word file into this chat (or into the `my-info` folder).
+> 2. **Your LinkedIn**: either paste your profile link and I'll read it for you (you'll log in to LinkedIn in
+>    the browser pane, I only read), or save it as a PDF: on your profile → **More** → **Save to PDF** → drag it here.
+> 3. **Photos** (optional): a headshot + up to 3 photos of you doing things you care about.
+> 4. **Quick questions**: [the Step 1 questions, numbered]
+>
+> Send whatever you have. We can start with just the résumé.
+
 ---
 
 ## The ground rules
@@ -51,7 +75,7 @@ Every content file has comments at the top that explain its fields. Read them be
 The files ship with a **sample person, "Jordan Example"**. Replace every bit of it.
 
 Tools:
-- `node serve.mjs` → preview at http://localhost:4848 (in the Claude desktop app, use the preview / launch config).
+- `node serve.mjs` → preview at http://localhost:4848 (in the Claude desktop app, start the `portfolio` preview from `.claude/launch.json`).
 - `node tools/check.mjs` → pre-publish check. Fails on leftover sample text, bad dates, missing files,
   phone numbers, a broken link preview. Must pass before publishing.
 - `node tools/build-single.mjs` → the whole site as ONE html file in `dist/` (for Vercel Drop or sharing as a file).
@@ -63,11 +87,18 @@ Tools:
 Ask for these in one message (a checklist they can work through):
 
 1. **Résumé**: drop the PDF or Word file in `my-info/` (or attach it in chat).
-2. **LinkedIn**: two options, they pick:
-   - **Save to PDF** (easiest, works for everyone): on a computer, open your LinkedIn profile → click
-     **More** (or **Resources**) under your name → **Save to PDF** → put it in `my-info/`.
-   - **Let Claude read it**: if Claude in Chrome is connected, you can open their own profile at
-     `linkedin.com/in/me` and read it. Only their own profile, only to read. Don't click anything that changes it.
+2. **LinkedIn**: offer to read it for them first; PDF is the fallback:
+   - **Claude reads it (preferred)**: ask for their profile link. LinkedIn hides profiles from plain web
+     fetches, so use a real browser: the Claude desktop app's built-in browser pane, or Claude in Chrome if
+     connected. Open their profile; if LinkedIn asks to sign in, **they** sign in themselves in that pane (never
+     type their password). Then read the page text: headline, About, Experience, Education, Skills, Licenses &
+     certifications, Volunteering, Honors, Projects, and the "Show all" pages for Experience and Skills.
+     Only their own profile, only to read. Don't click anything that changes it. Save what you read to
+     `my-info/linkedin.md` so it survives the session.
+   - **Save to PDF (fallback, always works)**: on a computer, their LinkedIn profile → **More** (or
+     **Resources**) under their name → **Save to PDF** → drop it in `my-info/` or the chat.
+   - Use LinkedIn and résumé together: LinkedIn often has roles, dates or skills the résumé dropped (and vice
+     versa). Where they disagree on a date or title, ask which is right.
 3. **Photos**: a headshot (square-ish, face centred), plus up to 3 photos of them doing things they care about
    (sport, club, travel, work). Optional but they make the page.
 4. **A few answers** (ask these; they can answer in one message):

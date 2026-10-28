@@ -13,8 +13,9 @@ and the prompt for **plain claude.ai chat** (no install).
 >
 > 1. Download the kit: https://github.com/IsaacRentmeester/portfolio-kit/archive/refs/heads/main.zip
 >    (unzip it; the folder is called portfolio-kit-main)
-> 2. Open the README. It shows two ways: the Claude desktop app (best) or plain claude.ai chat.
-> 3. Copy the matching prompt from PROMPT.md and paste it into Claude.
+> 2. Open the Claude desktop app → Code tab → open the portfolio-kit-main folder → type "hi".
+>    Claude takes it from there: it asks for your résumé, reads your LinkedIn, and walks you through going live.
+>    (No desktop app? The README has a claude.ai-only version.)
 >
 > It ships in UMN maroon and gold. Claude can switch it to any colours you want.
 
@@ -22,8 +23,9 @@ and the prompt for **plain claude.ai chat** (no install).
 
 ## 2. Claude desktop app (Code tab) or Claude Code — recommended
 
-Unzip the kit, open the **portfolio-kit** folder in the Claude desktop app's **Code** tab
-(or run `claude` inside it), then paste:
+Unzip the kit, open the **portfolio-kit-main** folder in the Claude desktop app's **Code** tab
+(or run `claude` inside it) and type anything, even "hi". Claude reads the kit's `CLAUDE.md` and
+immediately asks for your résumé, LinkedIn and photos. If you'd rather be explicit, paste:
 
 ```
 I want to build my personal portfolio website with this kit and put it on my LinkedIn.
@@ -79,6 +81,9 @@ THE RULES
   dropped and why, and fix any copy that mentions them.
 
 THE STEPS (check in with me after each)
+0. First, before anything else: tell me what you received and ask for anything missing (résumé, LinkedIn PDF
+   from profile → More → Save to PDF, photos). If you have web or browser tools that can open my LinkedIn
+   profile, offer to read it from my profile link instead of the PDF.
 1. Read my résumé and LinkedIn. Ask me, in one message: what I want people to remember in 10 seconds; what
    I'm looking for; one thing I'm proud of that's not on my résumé; what I'm going deep on right now (Focus
    section); the places I've lived/studied/worked in order (map, real lat/lon); hobbies (Beyond section);

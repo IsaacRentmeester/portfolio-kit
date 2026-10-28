@@ -29,7 +29,7 @@ so the page is never padded.
 | | Claude desktop app (recommended) | claude.ai chat only |
 |---|---|---|
 | You need | Claude desktop app with the **Code** tab, or Claude Code | Any browser, file creation turned on |
-| How | Open this folder in Claude, paste prompt **2** from `PROMPT.md` | Attach `chat-template/portfolio-template.html` + your files, paste prompt **3** |
+| How | Open this folder in Claude and type **hi**. Claude asks for your résumé, LinkedIn and photos | Attach `chat-template/portfolio-template.html` + your files, paste prompt **3** |
 | Photos, résumé PDF, link-preview image | ✅ all handled | Photos ✅, résumé must be a link, no preview image |
 | Updating later | "Update my portfolio: …" | Re-attach the file and ask |
 
