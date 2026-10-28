@@ -11,7 +11,8 @@ and the prompt for **plain claude.ai chat** (no install).
 > (https://isaacrentmeester.vercel.app) and put it on your LinkedIn. Claude does most of the work.
 > You'll need: your résumé, your LinkedIn saved as a PDF, a headshot, and about 45 minutes.
 >
-> 1. Download the kit: [link to the zip / GitHub repo]
+> 1. Download the kit: https://github.com/IsaacRentmeester/portfolio-kit/archive/refs/heads/main.zip
+>    (unzip it; the folder is called portfolio-kit-main)
 > 2. Open the README. It shows two ways: the Claude desktop app (best) or plain claude.ai chat.
 > 3. Copy the matching prompt from PROMPT.md and paste it into Claude.
 >

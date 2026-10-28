@@ -11,6 +11,11 @@ draggable career chart, experience and projects, a tool-logo grid, a "how I got 
 Sections that don't fit your story (no moves → no map, one job → no chart) drop off automatically,
 so the page is never padded.
 
+## Get the kit
+
+**[Download the zip](https://github.com/IsaacRentmeester/portfolio-kit/archive/refs/heads/main.zip)** and unzip it
+(the folder is `portfolio-kit-main`). Or on GitHub: **Use this template → Create a new repository**.
+
 ## What you need
 
 - Your **résumé** (PDF or Word)
