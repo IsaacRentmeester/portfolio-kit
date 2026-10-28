@@ -20,7 +20,12 @@ not developers. Explain what they need to *do* or *decide*, not how the code wor
    files unless they ask for it. The full résumé stays in `my-info/` (never published).
 4. **Edit content, not code.** All changes go in `config/` and `content/`, plus `index.html` meta tags.
    If something truly needs a code change, say so first and explain why in one line.
-5. **Ask before anything public.** Publishing the site, posting on LinkedIn, or changing their
+5. **Fit the person, don't pad.** Everyone's path is different. If someone hasn't moved around, has two jobs,
+   or one project, that section goes, not filler. Each section has a minimum in `config` → `thresholds`
+   (e.g. map: 3+ stops and 150+ miles; projects: 2+; toolkit: 5+ tools). Below it, the section and its
+   sidebar link drop off the page automatically. Never invent or stretch content to clear a threshold.
+   Tell them which sections were dropped and why, in one line each (`node tools/check.mjs` lists them).
+6. **Ask before anything public.** Publishing the site, posting on LinkedIn, or changing their
    LinkedIn profile all need a clear "yes" right before you do it. You never type their passwords.
 
 ---
@@ -29,7 +34,7 @@ not developers. Explain what they need to *do* or *decide*, not how the code wor
 
 | To change… | Edit |
 |---|---|
-| Name, LinkedIn URL, résumé link, colours, fonts, which sections show | `config/site.config.js` |
+| Name, LinkedIn URL, résumé link, colours, fonts, which sections show, minimum content per section (`thresholds`) | `config/site.config.js` |
 | Jobs, internships, leadership, school, skill tags, the 3–4 big numbers | `content/profile.js` |
 | Sidebar title + one-liner, About paragraphs, "Right now" card, headings, Beyond text | `content/copy.js` |
 | The "Focus" section (what they're going deep on now) + optional live site embed | `content/focus.js` |
@@ -86,7 +91,12 @@ Write a short outline back to them, no code yet:
 - Roles that go in Experience (newest first), and which are leadership/education.
 - 3–6 projects. A "project" can be a class project, case competition, club event, analysis, website,
   research, anything they made or led with an outcome.
-- Which optional sections are on: Focus, Toolkit, Map, Beyond, Ask me, Right now.
+- Which optional sections are on: Focus, Toolkit, Map, Beyond, Ask me, Right now, and which ones you're
+  **dropping** because there isn't enough real material (say why). A short, strong page beats a long thin one.
+  Typical cuts: map for someone who grew up and studies in the same place; career chart with only 1–2 roles;
+  Focus when they aren't going deep on anything yet; Beyond with no hobbies/photos to show.
+- Fix copy that references a dropped section (e.g. the sidebar status line mentions `{projects}`
+  projects; change it if there are none).
 
 Good portfolios lead with proof: outcomes and numbers up top, one clear "what I'm looking for",
 and a way to reach them. Cut anything that doesn't help a recruiter decide to message them.
@@ -104,6 +114,8 @@ Rules that keep it from breaking:
 - Every role `track` must exist in `tracks` (profile.js) **and** have a colour in `theme.tracks` (config).
   Rename or add track keys in both places together.
 - Turning a section off = set its flag in `features` to `false`. Its sidebar link disappears on its own.
+  Sections under their `thresholds` hide themselves too; lower a threshold only if the person
+  really wants a smaller section shown (e.g. one big project).
 - Map stops need real `lat`/`lon` (look them up). At least 2 stops, oldest first.
 - Toolkit: only list a logo name if `assets/logos/<name>.svg` exists; otherwise use `mark: "Ab"`.
   More logos: download from simpleicons.org (CC0) into `assets/logos/`.
@@ -206,6 +218,8 @@ Tell them, in plain words:
 
 - **Blank page**: open the browser console. A syntax error in a `content/*.js` file (missing comma or
   quote) is the usual cause; the console names the file and line.
+- **A section vanished**: it's under its threshold. The console shows `[sections] hidden: …` and the
+  check lists it. Add real content, lower the number in `thresholds`, or leave it off.
 - **Warnings starting with `[career]` or `[journey]`**: bad role dates/tracks or map stops; the message says which.
 - **Logo boxes empty**: the logo name has no matching file in `assets/logos/`.
 - **LinkedIn shows an old or blank preview**: og:image must be an absolute https URL to a real file;

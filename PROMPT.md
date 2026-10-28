@@ -72,7 +72,10 @@ THE RULES
 - My voice: first person, short sentences, plain words, no buzzwords ("passionate", "results-driven"...).
 - Private stays private: no phone number, home address or student ID anywhere.
 - Dates are "YYYY-MM"; current roles have end: null. Every role's track must exist in tracks AND in site.theme.tracks.
-- Turn sections off with site.features (focus, toolkit, journey = map, beyond, ask, now) instead of leaving them half-empty.
+- Fit the person, don't pad. Every path is different. Sections below their minimum in site.thresholds
+  (map: 3+ stops and 150+ miles; projects 2+; toolkit 5+ tools; career chart 3+ roles; ask 3+; etc.) hide
+  themselves automatically. Never invent or stretch content to fill one. Tell me which sections were
+  dropped and why, and fix any copy that mentions them.
 
 THE STEPS (check in with me after each)
 1. Read my résumé and LinkedIn. Ask me, in one message: what I want people to remember in 10 seconds; what
@@ -80,7 +83,7 @@ THE STEPS (check in with me after each)
    section); the places I've lived/studied/worked in order (map, real lat/lon); hobbies (Beyond section);
    colours (keep maroon/gold?).
 2. Show me a short outline: sidebar one-liner, About paragraphs, the 3–4 real numbers, roles, 3–6 projects,
-   which sections are on. Wait for my OK.
+   which sections are on and which you're dropping for lack of real material. Wait for my OK.
 3. Fill the data block and hand me the finished HTML file. I'll open it in my browser to check it.
 4. Make changes I ask for until I'm happy.
 5. Publishing: tell me to go to vercel.com/drop, sign in (free), drag the HTML file onto it, name the project

@@ -15,12 +15,16 @@ const { projects } = await import(root + "content/projects.js");
 const { photos, gallery } = await import(root + "content/photos.js");
 const { stops } = await import(root + "content/journey.js");
 const { focus } = await import(root + "content/focus.js");
+const copy = { ...(await import(root + "content/copy.js")) };
+const { ask } = await import(root + "content/ask.js");
+const { toolkit } = await import(root + "content/toolkit.js");
+const { decideSections } = await import(root + "services/sections/index.js");
 const html = await readFile(root + "index.html", "utf8");
 const all = (await Promise.all(["config/site.config.js", "content/profile.js", "content/copy.js", "content/projects.js",
   "content/ask.js", "content/journey.js", "content/focus.js", "content/toolkit.js", "index.html"].map((f) => readFile(root + f, "utf8")))).join("\n");
 
 // 1. Sample data left behind.
-for (const s of ["Jordan Example", "Northwind", "your-handle", "your-site.vercel.app", "Marketing Club", "Rochester"]) {
+for (const s of ["Jordan Example", "Northwind", "your-handle", "your-site.vercel.app", "Marketing Club", "Fargo"]) {
   if (all.includes(s)) bad(`sample text still in the site: "${s}"`);
 }
 // 2. Private info that shouldn't be public.
@@ -42,8 +46,9 @@ for (const p of projects) if (p.media) need.push(p.media.video, p.media.poster);
 for (const f of need) if (!(await exists(f))) bad(`missing file: ${f}`);
 for (const [k, p] of Object.entries(photos)) if (p.src && !p.alt) bad(`photo "${k}" needs alt text`);
 if (!photos.headshot?.src) note("no headshot yet (photos.headshot.src)");
-if (site.features.journey && stops.length < 2) bad("the map needs at least 2 stops (or set features.journey: false)");
-if (site.features.focus && !focus.timeline.length) bad("focus.timeline is empty (or set features.focus: false)");
+// Sections below their threshold drop off the page on their own. Say which, so nothing vanishes by surprise.
+const { hidden } = decideSections({ site, copy, roles, stats, stops, photos, gallery, ask, projects, focus, toolkit });
+for (const h of hidden) note(`hidden (not enough content yet): ${h.reason}. Add more, lower it in config thresholds, or turn the feature off.`);
 // 5. Link preview for LinkedIn.
 const og = html.match(/property="og:image" content="([^"]+)"/)?.[1] ?? "";
 if (!og.startsWith("https://")) bad("og:image in index.html must be an absolute https:// URL");

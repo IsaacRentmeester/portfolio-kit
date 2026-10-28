@@ -9,6 +9,7 @@ import { viewerDialog } from "../components/journey.js";
 import { createCareer } from "../services/career/index.js";
 import { createJourney } from "../services/journey/index.js";
 import { startMotion } from "../services/motion/index.js";
+import { decideSections } from "../services/sections/index.js";
 import { mountCareer } from "../controllers/career.js";
 import { mountJourney } from "../controllers/journey.js";
 import { mountPalette } from "../controllers/palette.js";
@@ -32,21 +33,24 @@ export function start({ site, copy, roles, stats, tracks, stops, photos, gallery
   const app = document.getElementById("app");
   const f = site.features;
   // Sidebar links only for sections that are switched on.
-  const nav = site.sections.filter((s) => !s.feature || f[s.feature]);
-  const shots = !f.beyond ? [] : gallery.keys.map((k) => photos[k]).filter((p) => p?.src);
+  // Which sections have enough real content to show (thresholds in config). Thin ones drop off.
+  const { show, hidden } = decideSections({ site, copy, roles, stats, stops, photos, gallery, ask, projects, focus, toolkit });
+  if (hidden.length) console.info(`[sections] hidden: ${hidden.map((h) => h.reason).join("; ")}`);
+  const nav = site.sections.filter((s) => !s.feature || (show[s.feature] ?? f[s.feature]));
+  const shots = !show.beyond ? [] : gallery.keys.map((k) => photos[k]).filter((p) => p?.src);
 
   app.innerHTML = `
     <div class="shell" id="top">
       ${d.sidebar(site, copy.intro, photos.headshot?.src ? photos.headshot : null, nav, focus.startedOn, projects.length)}
       <main class="main" id="main">
-        ${d.about(copy.about, stats, f.now ? copy.now : null)}
-        ${f.focus ? d.focusBlock(focus, focus.startedOn, projects.length) : ""}
-        ${d.experience(copy.experienceCopy, copy.career, roles, tracks, site.resume)}
-        ${projects.length ? d.projectsBlock(copy.projectsCopy, projects) : ""}
-        ${f.toolkit ? d.toolkitBlock(toolkit) : ""}
-        ${f.journey ? d.storyBlock(copy.journey) : ""}
-        ${f.beyond ? d.lifeBlock(copy.life, shots) : ""}
-        ${f.ask ? d.askBlock(ask, site.name.first) : ""}
+        ${d.about(copy.about, show.stats ? stats : [], show.now ? copy.now : null)}
+        ${show.focus ? d.focusBlock(focus, focus.startedOn, projects.length) : ""}
+        ${d.experience(copy.experienceCopy, show.career ? copy.career : null, roles, tracks, site.resume)}
+        ${show.projects ? d.projectsBlock(copy.projectsCopy, projects) : ""}
+        ${show.toolkit ? d.toolkitBlock(toolkit) : ""}
+        ${show.journey ? d.storyBlock(copy.journey) : ""}
+        ${show.beyond ? d.lifeBlock(copy.life, shots) : ""}
+        ${show.ask ? d.askBlock(ask, site.name.first) : ""}
         ${d.devFooter(site, copy.footer)}
       </main>
     </div>
@@ -69,11 +73,11 @@ export function start({ site, copy, roles, stats, tracks, stops, photos, gallery
   mountTilt(app, ".shot", 7);
   mountTilt(app, ".proj:first-child", 3);
   mountVideos(app);
-  if (f.ask) mountAsk({ root: $("#ask"), ask });
-  const journeyCtl = f.journey ? mountJourney({ root: $("#story"), journey: createJourney({ stops }), photos, base: f.mapBorders ? mapBase : null }) : null;
+  if (show.ask) mountAsk({ root: $("#ask"), ask });
+  const journeyCtl = show.journey ? mountJourney({ root: $("#story"), journey: createJourney({ stops }), photos, base: f.mapBorders ? mapBase : null }) : null;
   if (shots.length) mountGallery({ root: $("#life"), dialog: $(".viewer"), items: shots });
   let careerCtl = { replay() {} };
-  if (f.career) careerCtl = mountCareer({ root: $(".career"), career: createCareer({ roles, tracks, today: site.today }), tracks });
+  if (show.career) careerCtl = mountCareer({ root: $(".career"), career: createCareer({ roles, tracks, today: site.today }), tracks });
 
   // Clicking a role in the chart panel scrolls to that entry.
   app.addEventListener("click", (e) => {
@@ -85,9 +89,9 @@ export function start({ site, copy, roles, stats, tracks, stops, photos, gallery
     const jump = (label, href, keywords = "") => ({ label, hint: "jump", href, keywords });
     const commands = [
       ...nav.map((s) => jump(s.label, s.href, s.keywords)),
-      ...(f.journey ? [{ label: "Play my story", hint: "action", action: "play-journey", keywords: "map" }] : []),
+      ...(show.journey ? [{ label: "Play my story", hint: "action", action: "play-journey", keywords: "map" }] : []),
       ...roles.map((r) => ({ label: r.org, hint: r.title.toLowerCase(), href: `#role-${r.id}`, keywords: `${r.title} ${tracks[r.track]} ${r.place}` })),
-      ...projects.map((p) => ({ label: p.title, hint: "project", href: "#projects", keywords: p.tags.join(" ") })),
+      ...(show.projects ? projects : []).map((p) => ({ label: p.title, hint: "project", href: "#projects", keywords: p.tags.join(" ") })),
       ...site.commands,
       ...(site.resume ? [{ label: "Download résumé (PDF)", hint: "file", href: site.resume }] : []),
       { label: "Open LinkedIn", hint: "link", href: site.contact.linkedin },

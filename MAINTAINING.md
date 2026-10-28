@@ -11,3 +11,6 @@
 - Make the zip to send: `npm`-free: `zip -r share/portfolio-kit.zip . -x '.git/*' 'dist/*' 'share/*' 'my-info/*' '*.DS_Store'`
   (then add `my-info/README.md` back: `zip share/portfolio-kit.zip my-info/README.md`).
 - Dev server: `portfolio-kit` in `~/Desktop/Claude/.claude/launch.json` (port 4848).
+- Thresholds (Isaac's call, 2026-10-28): every optional section has a minimum in `config` `thresholds`; below it,
+  `services/sections` hides the section and its sidebar link so thin profiles don't get padded. The sample person
+  clears every threshold on purpose (hometown is Fargo so the map passes the 150-mile rule).

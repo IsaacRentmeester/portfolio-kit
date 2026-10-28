@@ -45,13 +45,13 @@ const nowCard = (now) => now ? `
 export const about = (copy, stats, now) => section("about", "About", `
   <div class="prose" data-reveal>${copy.paragraphs.map((p) => `<p>${esc(p)}</p>`).join("")}</div>
   ${nowCard(now)}
-  <dl class="metrics" data-reveal>
+  ${stats.length ? `<dl class="metrics" data-reveal>
     ${stats.map((s) => {
       const days = s.liveDaysSince ? Math.max(0, Math.floor((Date.now() - new Date(s.liveDaysSince + "T00:00")) / 86400000)) : null;
       const n = days ?? s.count;
       return `<div class="metric"><dd class="metric__n" data-count="${n}" data-decimals="${s.decimals ?? 0}" data-prefix="${esc(s.prefix ?? "")}" data-suffix="${esc(s.suffix ?? "")}">${esc(s.prefix ?? "")}${s.decimals ? n.toFixed(s.decimals) : n}${esc(s.suffix ?? "")}</dd><dt>${esc(s.label)}</dt></div>`;
     }).join("")}
-  </dl>`);
+  </dl>` : ""}`);
 
 export const focusBlock = (ai, days, projects) => section("focus", ai.label, `
   <p class="lead" data-reveal>${fill(ai.lead, days, projects)}</p>
@@ -90,7 +90,7 @@ const entry = (r, tracks) => `
   </li>`;
 
 export const experience = (copy, careerCopy, roles, tracks, resume) => section("experience", copy.heading, `
-  ${careerBlock(careerCopy)}
+  ${careerCopy ? careerBlock(careerCopy) : ""}
   <ol class="entries" data-reveal>${roles.filter((r) => r.section !== "life").map((r) => entry(r, tracks)).join("")}</ol>
   ${resume ? `<a class="more" href="${resume}" target="_blank" rel="noopener">${esc(copy.resume)} <span aria-hidden="true">↗</span></a>` : ""}`);
 

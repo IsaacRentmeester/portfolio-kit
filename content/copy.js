@@ -37,7 +37,7 @@ export const projectsCopy = { heading: "Projects" };
 
 // The map section (feature: journey). Stops live in content/journey.js.
 export const journey = {
-  heading: "From Rochester to Minneapolis",
+  heading: "From Fargo to Minneapolis",
   note: "Step through it or press play.",
   play: "Play",
   milesLabel: "miles so far",

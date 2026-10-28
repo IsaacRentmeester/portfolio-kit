@@ -8,6 +8,8 @@ maroon, gold and white by default.
 **What you get:** a one-page site with a sticky sidebar, an About section with your key numbers, a
 draggable career chart, experience and projects, a tool-logo grid, a "how I got here" map, photos, an
 "Ask me" Q&A and a ⌘K search menu. Works on phones. Free to host.
+Sections that don't fit your story (no moves → no map, one job → no chart) drop off automatically,
+so the page is never padded.
 
 ## What you need
 

@@ -3,7 +3,7 @@
 // photo (optional): a key from content/photos.js, shown on that stop's card.
 export const stops = [
   {
-    id: "home", label: "below", place: "Rochester, Minnesota", lat: 44.012, lon: -92.48,
+    id: "home", label: "below", place: "Fargo, North Dakota", lat: 46.877, lon: -96.79,
     when: "Growing up", title: "Home",
     text: "Where I grew up and started working at sixteen.",
   },

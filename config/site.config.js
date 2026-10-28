@@ -38,7 +38,7 @@ export const site = {
     { label: "About", href: "#about", keywords: "bio summary" },
     { label: "Focus", href: "#focus", keywords: "what I'm building now", feature: "focus" },
     { label: "Experience", href: "#experience", keywords: "jobs resume internships chart" },
-    { label: "Projects", href: "#projects", keywords: "work portfolio case studies" },
+    { label: "Projects", href: "#projects", keywords: "work portfolio case studies", feature: "projects" },
     { label: "Toolkit", href: "#toolkit", keywords: "tools skills software", feature: "toolkit" },
     { label: "Story", href: "#story", keywords: "map journey hometown", feature: "journey" },
     { label: "Beyond", href: "#life", keywords: "hobbies sports volunteering", feature: "beyond" },
@@ -50,6 +50,21 @@ export const site = {
     { label: "Replay the career chart", hint: "action", action: "replay-career" },
     { label: "Back to top", hint: "jump", href: "#top" },
   ],
+
+  // Minimum real content before a section shows. Below the line, the section (and its sidebar link)
+  // drops off instead of looking thin. Everyone's path is different: an empty spot beats filler.
+  thresholds: {
+    stats: 3, // numbers in the metrics row under About
+    nowItems: 2, // lines in the "Right now" card
+    focusItems: 2, // Focus timeline items
+    chartRoles: 3, // roles in the career chart (fewer = just the Experience list)
+    projects: 2, // projects
+    toolkitTools: 5, // tools across all toolkit groups
+    mapStops: 3, // map stops...
+    mapMiles: 150, // ...and total miles travelled (a 20-mile move isn't a map)
+    beyondItems: 3, // text + facts + photos in "Beyond the classroom"
+    askItems: 3, // "Ask me" questions
+  },
 
   // Turn whole sections and effects on/off. false = gone from the page and the sidebar.
   features: {
