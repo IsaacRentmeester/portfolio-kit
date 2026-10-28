@@ -18,7 +18,7 @@ state before answering:
   straight into **Step 1: Gather** and ask for everything in one message: résumé, LinkedIn, photos, the
   questions. Also look in `my-info/` first: if files are already there, say what you found and ask only
   for what's missing.
-- **Already filled in** → they're coming back to update. Ask what changed (new job, project, photo) and
+- **Already filled in** → they're coming back to update, or to put the site on LinkedIn (→ Step 7). Ask what changed (new job, project, photo) and
   follow "Updating later" in Step 8.
 
 Template for that first reply (adapt the wording, keep it short):
@@ -213,21 +213,43 @@ preview card with LinkedIn's Post Inspector: linkedin.com/post-inspector (paste 
 
 ## Step 7: Put it on LinkedIn
 
-Give them both options and let them choose:
+This step also runs **any time** they ask, in any words ("add it to my LinkedIn", "put it on my profile",
+"how do I show this at the top?"), even mid-way through another step, as long as the site has a live link.
 
-**They do it (2 minutes).** Walk them through `guides/add-to-linkedin.md`:
-1. **Featured** (the big card under About): profile → **Add section** (or the **+** on Featured) →
-   **Featured** → **Add a link** → paste URL → title "Portfolio: <Name>" + one-line description → Save.
-   Drag it to first place.
-2. **Intro link**: **Edit intro** (pencil by your name) → **Website** → URL + link text like "My portfolio".
-   If there's no Website field there, use **Contact info** → **Website** → type "Portfolio".
-3. **Optional post**: share the link with 3–4 lines about what they built and why.
+Ask one question: **"Want me to add it to your LinkedIn for you, or should I show you how (2 minutes)?"**
+Default to doing it for them if they said "add it" / "do it".
 
-**Claude does it.** Only if Claude in Chrome is connected and they're already logged in to LinkedIn there:
-- Open their profile, add the Featured link and the intro website link, fill title/description.
-- Draft the post text in chat first. They approve the exact wording.
-- **Stop and ask before every Save / Post click**: "Ready to post this? (yes/no)". Never log in for them,
-  never change anything else on their profile, never message anyone.
+The goal is the **top of their profile**, in two spots:
+- **Featured**: the big clickable card right under About. The most visible spot on the profile.
+- **Intro link**: a link under their name and headline, the first thing people see.
+
+**Claude does it for them.** Use a real browser: the Claude desktop app's built-in browser pane, or
+Claude in Chrome if connected.
+1. Open linkedin.com. If they're not signed in, ask **them** to sign in in that pane (never type their
+   password, never handle a verification code). Wait until they say they're in.
+2. Go to their profile (`linkedin.com/in/me`).
+3. **Featured**: click the **+** on Featured (no Featured section yet? **Add profile section** →
+   **Recommended** → **Add featured**) → **Add a link** → paste the site URL → title `Portfolio: <Name>`,
+   description one line (e.g. "Experience, projects and how I got here").
+4. **Intro link**: pencil by their name (**Edit intro**) → **Website** → URL + link text `My portfolio`.
+   No Website field? **Contact info** → pencil → **Add website** → URL, type **Portfolio**.
+5. Before **each** Save: show what you filled in and ask "Save this? (yes/no)". Save only on a yes.
+6. After saving: if Featured has other items, offer to drag the portfolio to the first spot. Then reload
+   the profile, take a screenshot and show them the result.
+7. Optional post: draft it in chat first, they approve the exact text, then ask "Post this now? (yes/no)"
+   right before clicking Post.
+Never change anything else on their profile, never message or connect with anyone, never accept prompts
+or settings LinkedIn pops up without asking them. If any step gets stuck (layout changed, captcha,
+LinkedIn asks to verify), stop and switch to giving them the manual steps below.
+
+**They do it themselves (2 minutes).** Give them these steps (also in `guides/add-to-linkedin.md`):
+1. **Featured**: your profile → **+** on Featured (or **Add profile section** → **Recommended** →
+   **Add featured**) → **Add a link** → paste URL → title "Portfolio: <Name>" + one-line description →
+   **Save**. Drag it to first place.
+2. **Intro link**: pencil by your name (**Edit intro**) → **Website** → URL + link text "My portfolio" → **Save**.
+   No Website field? **Contact info** → **Website** → type "Portfolio".
+3. **Optional post**: share the link with 3–4 lines about what you built and why.
+4. Check the preview card at linkedin.com/post-inspector (paste the URL → Inspect).
 
 Draft post they can tweak (keep it human):
 > I built a personal site that tells my story better than a one-page résumé can: experience, projects,

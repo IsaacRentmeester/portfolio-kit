@@ -15,6 +15,8 @@ and the prompt for **plain claude.ai chat** (no install).
 >    (unzip it; the folder is called portfolio-kit-main)
 > 2. Open the Claude desktop app → Code tab → open the portfolio-kit-main folder → type "hi".
 >    Claude takes it from there: it asks for your résumé, reads your LinkedIn, and walks you through going live.
+>    When it's live, say "add it to my LinkedIn" and Claude puts it at the top of your profile for you
+>    (or shows you how in 2 minutes).
 >    (No desktop app? The README has a claude.ai-only version.)
 >
 > It ships in UMN maroon and gold. Claude can switch it to any colours you want.

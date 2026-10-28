@@ -1,5 +1,7 @@
 # Put your portfolio on LinkedIn
 
+Fastest: tell Claude **"add it to my LinkedIn"** and it does it for you (see the end of this page).
+
 LinkedIn can't host a website or an HTML file. It shows **links**. So your site needs a public link
 first (Step 6 of the build), then you place that link in three spots. About 2 minutes, on a computer.
 
@@ -34,10 +36,10 @@ Tip: LinkedIn shows posts with outside links a bit less. Some people put the lin
 
 ## Let Claude do it
 
-If you use **Claude in Chrome** (the browser extension) and you're logged in to LinkedIn in Chrome,
-you can say: *"Add my portfolio link to my LinkedIn Featured section and my intro, and draft a post."*
-Claude will fill everything in and **stop to ask before each Save or Post**. You stay in control:
-Claude never logs in for you and never changes anything else.
+Just say **"add it to my LinkedIn"**. In the Claude desktop app, Claude opens LinkedIn in its built-in
+browser pane (or uses Claude in Chrome if you have it). You sign in yourself; Claude then adds the Featured
+link and the intro link, and can draft a post. It **stops to ask before each Save or Post** and shows you
+a screenshot at the end. Claude never types your password and never changes anything else.
 
 ## Preview card
 
