@@ -1,0 +1,46 @@
+/* Reset and element defaults. Tokens only. */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: var(--step-body);
+  line-height: var(--lead-text);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+img, video { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration-thickness: 0.08em; text-underline-offset: 0.18em; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+h1, h2, h3 { font-weight: 600; letter-spacing: var(--track-head); line-height: var(--lead-head); text-wrap: balance; }
+p { text-wrap: pretty; }
+ul, ol { list-style: none; padding: 0; }
+::selection { background: var(--accent); color: var(--accent-ink); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+.skip { position: absolute; left: var(--margin); top: -4rem; background: var(--accent); color: var(--accent-ink); padding: 0.75rem 1rem; z-index: 10; }
+.skip:focus { top: 1rem; }
+
+/* Shared controls */
+.button {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: var(--control-h); padding: 0 1.4rem;
+  background: var(--accent); color: var(--accent-ink);
+  font-weight: 500; text-decoration: none; border-radius: var(--radius);
+  transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-fast);
+}
+.button:hover { background: var(--ink); }
+.button:active { transform: scale(0.97); }
+
+.link { transition: color var(--dur-fast); }
+.link:hover { color: var(--accent); }
+
+/* Pictures: one treatment for every found image */
+.plate img { filter: grayscale(1) contrast(1.05); width: 100%; height: 100%; object-fit: cover; }
+.plate figcaption { font-size: var(--step-small); color: var(--muted); margin-top: var(--gap-sm); max-width: 48ch; }

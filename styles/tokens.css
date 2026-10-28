@@ -1,0 +1,59 @@
+/* Design tokens. Restyle the site by editing this file only. */
+:root {
+  /* Colour — Night and cornflower */
+  --bg: #0a0d14;
+  --surface: #131824;
+  --surface-2: #1b2232;
+  --ink: #e9edf3;
+  --muted: #9aa3b2;
+  --accent: #5a9bfc;
+  --accent-ink: #0a0d14;
+
+  /* Toolkit spine highlights, by kind */
+  --kind-build: #5a9bfc;
+  --kind-ship: #8fd3c1;
+  --kind-assist: #e9edf3;
+  --kind-learn: #f2c46d;
+  --kind-make: #f19c8b;
+
+  --area: rgba(90, 155, 252, 0.14);
+
+  /* Planner demo block colours */
+  --plan-fixed: #2a3550;
+  --plan-focus: #5a9bfc;
+  --plan-health: #8fd3c1;
+  --plan-people: #f2c46d;
+
+  /* Type */
+  --font: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --step-small: clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem);
+  --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-lead: clamp(1.25rem, 1.05rem + 0.9vw, 2rem);
+  --step-head: clamp(2.25rem, 1.2rem + 3.6vw, 4.75rem);
+  --step-display: clamp(4rem, 12.2vw, 12.5rem);
+  --track-display: -0.045em;
+  --track-head: -0.03em;
+  --lead-display: 0.84;
+  --lead-head: 1;
+  --lead-text: 1.5;
+
+  /* Space */
+  --margin: clamp(1rem, 2.6vw, 2.5rem);
+  --gutter: 1.5rem;
+  --section: clamp(6rem, 12vw, 12rem);
+  --gap-sm: 0.75rem;
+  --gap-md: 1.5rem;
+  --gap-lg: 4.5rem;
+
+  /* Shape */
+  --radius: 0;
+  --control-h: 3rem;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 180ms;
+  --dur-med: 600ms;
+  --dur-slow: 950ms;
+  --stagger: 80ms;
+  --rise: 24px;
+}

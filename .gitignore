@@ -1,0 +1,12 @@
+.DS_Store
+.env*
+!.env.example
+node_modules/
+.vercel
+dist/
+# Your private inputs (full résumé with phone number, LinkedIn export). Never published.
+my-info/*
+!my-info/README.md
+# Finder/iCloud duplicate copies
+* 2.*
+share/
