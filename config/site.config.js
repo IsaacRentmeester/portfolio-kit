@@ -1,9 +1,11 @@
 // Site-wide settings. Change behaviour here, not in components.
-// Everything below is SAMPLE data for "Jordan Example". Claude replaces it in Step 3 of CLAUDE.md.
+// Everything below is SAMPLE data for "Jordan Example". Your AI replaces it in Step 3 of AGENTS.md.
 export const site = {
   name: { first: "Jordan", last: "Example" },
   monogram: "JE",
   today: "2026-10", // the career chart runs up to this month (YYYY-MM). Bump it when you update the site.
+  url: "", // the live link once published, e.g. "https://jordan-example.vercel.app" (fills link-preview tags in the one-file build)
+  ogImage: "photos/og-card.jpg", // link-preview image, relative to url (folder route only)
   resume: "", // e.g. "files/resume.pdf": public copy of your résumé, NO phone number or home address. "" hides every résumé button.
 
   contact: {

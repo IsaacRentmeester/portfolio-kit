@@ -1,6 +1,7 @@
 # Portfolio Kit
 
-Build a personal portfolio website from your résumé and LinkedIn with Claude, put it online for free,
+Build a personal portfolio website from your résumé and LinkedIn with any AI (ChatGPT, Gemini, Claude),
+put it online for free,
 and feature it on your LinkedIn profile. Same engine as
 [isaacrentmeester.vercel.app](https://isaacrentmeester.vercel.app), with University of Minnesota
 maroon, gold and white by default.
@@ -21,21 +22,24 @@ so the page is never padded.
 - Your **résumé** (PDF or Word)
 - Your **LinkedIn as a PDF**: on a computer, your profile → **More** → **Save to PDF**
 - A **headshot**, plus up to 3 photos of you doing things you care about (optional)
-- **Claude**: the desktop app (best) or claude.ai
+- **Any AI assistant**: ChatGPT, Gemini, Claude, Copilot…
 - About **45 minutes**
 
 ## Pick a way
 
-| | Claude desktop app (recommended) | claude.ai chat only |
+| | **A. Any AI chat** (easiest) | **B. AI with folder access** (most features) |
 |---|---|---|
-| You need | Claude desktop app with the **Code** tab, or Claude Code | Any browser, file creation turned on |
-| How | Open this folder in Claude and type **hi**. Claude asks for your résumé, LinkedIn and photos | Attach `chat-template/portfolio-template.html` + your files, paste prompt **3** |
-| Photos, résumé PDF, link-preview image | ✅ all handled | Photos ✅, résumé must be a link, no preview image |
-| Updating later | "Update my portfolio: …" | Re-attach the file and ask |
+| Works with | ChatGPT, Gemini, Claude, Copilot, any chat | Claude desktop app (Code tab) or Claude Code, ChatGPT Codex, Gemini CLI, Cursor, Copilot |
+| Start | Double-click **`builder.html`** → **Copy the prompt** → paste it into a new chat with your résumé + LinkedIn PDF | Open this folder in the tool and type **hi** |
+| Then | Your AI interviews you and writes your site's text as one block of data. Paste it into the builder, add photos, preview, download | The AI reads the playbook (`AGENTS.md`), asks for your résumé and LinkedIn, and edits the site for you |
+| Photos | ✅ added in the builder | ✅ |
+| Résumé button, link-preview image | Résumé must be a link; no preview image | ✅ both |
+| Updating later | Ask your AI for changes, paste the new data, download again | "Update my portfolio: …" |
 
-Both end the same way: a free `yourname.vercel.app` link and step-by-step help adding it to LinkedIn
-(Featured section + the link under your name). Claude can even add it to LinkedIn for you if you use
-Claude in Chrome; it asks before every click that saves or posts.
+Both end the same way: a free `yourname.vercel.app` link (drag and drop at vercel.com/drop) and
+step-by-step help adding it to LinkedIn (Featured section + the link under your name). If your AI can
+control a browser you're signed in to (Claude in Chrome, ChatGPT agent mode, Gemini in Chrome), it can
+add it to LinkedIn for you; it asks before every click that saves or posts.
 
 ## Files
 
@@ -45,12 +49,14 @@ config/             site.config.js: name, links, colours, which sections show
 content/            every word on the page: profile.js, copy.js, projects.js, ask.js, journey.js…
 photos/ files/      public photos and the public résumé copy (no phone number)
 index.html          page title + link-preview tags (lines marked FILL)
-CLAUDE.md           the step-by-step playbook Claude follows
+builder.html        way A: paste your AI's data, add photos, preview, download your site
+chat/               way A: full-prompt.md (the prompt), data-guide.md, example-data.json
+AGENTS.md           way B: the step-by-step playbook any AI agent follows
+CLAUDE.md GEMINI.md  pointers to AGENTS.md (Claude and Gemini look for these names)
 PROMPT.md           prompts to copy, and a message to send friends
 guides/             deploy-vercel.md, add-to-linkedin.md (click-by-click)
-chat-template/      the one-file version for claude.ai chat
 engine/ components/ controllers/ services/ styles/   the site engine. No need to touch.
-tools/              check.mjs (pre-publish check), build-single.mjs (one-file build)
+tools/              check.mjs (pre-publish check), build-single.mjs (one-file site; --builder rebuilds builder.html)
 ```
 
 ## Run it locally

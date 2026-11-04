@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio Builder</title>
+  <meta name="description" content="Turn the JSON your AI wrote into your finished portfolio website.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+__BUILDER_CSS__
+  </style>
+</head>
+<body>
+  <header class="top">
+    <p class="eyebrow">Portfolio Kit</p>
+    <h1>Portfolio builder</h1>
+    <p class="lede">Works with ChatGPT, Gemini, Claude or any AI chat. Your AI writes the words; this page turns them
+      into your website. Nothing you add here is uploaded anywhere. It all stays on this computer.</p>
+  </header>
+
+  <main class="steps">
+    <section class="step" aria-labelledby="s1">
+      <span class="step__n">1</span>
+      <div class="step__body">
+        <h2 id="s1">Give your AI the instructions</h2>
+        <p>Copy the prompt, open a new chat in ChatGPT, Gemini or Claude, paste it, and attach your résumé
+          and your LinkedIn PDF (LinkedIn profile → <b>More</b> → <b>Save to PDF</b>). Answer its questions.</p>
+        <button class="btn btn--primary" type="button" id="copy-prompt">Copy the prompt</button>
+        <details class="fallback" id="prompt-fallback">
+          <summary>Show the prompt</summary>
+          <textarea id="prompt-text" readonly rows="8" aria-label="The prompt to paste into your AI"></textarea>
+        </details>
+      </div>
+    </section>
+
+    <section class="step" aria-labelledby="s2">
+      <span class="step__n">2</span>
+      <div class="step__body">
+        <h2 id="s2">Paste what your AI wrote</h2>
+        <p>When your AI sends a block of JSON (it starts with <code>{</code>), copy the whole thing and paste it here.
+          Pasting its full reply is fine too.</p>
+        <textarea id="json" rows="9" spellcheck="false" placeholder='{ "site": { "name": { "first": "…" } … } }' aria-label="Your portfolio JSON"></textarea>
+        <div class="row">
+          <button class="btn btn--primary" type="button" id="check">Check and preview</button>
+          <button class="btn btn--ghost" type="button" id="load-sample">Try the sample first</button>
+        </div>
+        <div class="report" id="report" hidden aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="step" aria-labelledby="s3">
+      <span class="step__n">3</span>
+      <div class="step__body">
+        <h2 id="s3">Add your photos <span class="opt">optional</span></h2>
+        <p>A headshot, plus up to three photos of you doing things you care about. They're shrunk to web size automatically.</p>
+        <div class="photos" id="photos"></div>
+      </div>
+    </section>
+
+    <section class="step" aria-labelledby="s4">
+      <span class="step__n">4</span>
+      <div class="step__body">
+        <h2 id="s4">Preview</h2>
+        <div id="preview-wrap" hidden>
+          <div class="row row--tight" role="group" aria-label="Preview width">
+            <button class="chip" type="button" data-width="100%" aria-pressed="true">Desktop</button>
+            <button class="chip" type="button" data-width="390px" aria-pressed="false">Phone</button>
+          </div>
+          <div class="frame"><iframe id="preview" title="Preview of your site"></iframe></div>
+          <p class="small">Want changes? Tell your AI, paste its new JSON in step 2, and check again.</p>
+        </div>
+        <p class="small empty">Your site shows up here after step 2.</p>
+      </div>
+    </section>
+
+    <section class="step" aria-labelledby="s5">
+      <span class="step__n">5</span>
+      <div class="step__body">
+        <h2 id="s5">Download and put it online</h2>
+        <button class="btn btn--primary" type="button" id="download" disabled>Download my site</button>
+        <div id="after-download" hidden>
+          <ol class="list">
+            <li>Go to <a href="https://vercel.com/drop" target="_blank" rel="noopener">vercel.com/drop</a> and sign in (free).</li>
+            <li>Drag <b id="file-name">your file</b> from your Downloads onto that page. Name the project <code>firstname-lastname</code>. Deploy.</li>
+            <li>Copy your <code>.vercel.app</code> link and give it to your AI. It adds the link to your data so previews work.
+              Paste the new JSON here, download again, and drop it on the same project.</li>
+            <li>Ask your AI: <b>"Add it to my LinkedIn."</b> It'll walk you through the Featured section and the link under your name.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">Portfolio Kit · <a href="https://github.com/IsaacRentmeester/portfolio-kit" target="_blank" rel="noopener">github.com/IsaacRentmeester/portfolio-kit</a> · MIT</footer>
+
+  <script>window.__KIT = __KIT_JSON__;</script>
+  <script>
+__BUILDER_JS__
+  </script>
+</body>
+</html>

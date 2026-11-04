@@ -1,0 +1,540 @@
+{
+  "site": {
+    "name": {
+      "first": "Jordan",
+      "last": "Example"
+    },
+    "monogram": "JE",
+    "today": "2026-10",
+    "url": "",
+    "ogImage": "photos/og-card.jpg",
+    "resume": "",
+    "contact": {
+      "linkedin": "https://www.linkedin.com/in/your-handle",
+      "extra": {
+        "label": "github.com/jordan",
+        "href": ""
+      }
+    },
+    "theme": {
+      "colors": {
+        "bg": "#12060a",
+        "surface": "#1d0a10",
+        "surface-2": "#2a1019",
+        "line": "#3a1722",
+        "ink": "#ffffff",
+        "muted": "#e0c9cf",
+        "accent": "#ffcc33",
+        "accent-ink": "#3a0010",
+        "accent-2": "#7a0019"
+      },
+      "tracks": {
+        "school": "#ffcc33",
+        "work": "#e0c9cf",
+        "internship": "#f5a524",
+        "leadership": "#ff6b81",
+        "sport": "#8fd3c1"
+      },
+      "font": "\"IBM Plex Sans\", ui-sans-serif, system-ui, sans-serif",
+      "mono": "\"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace",
+      "fontsUrl": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    },
+    "sections": [
+      {
+        "label": "About",
+        "href": "#about",
+        "keywords": "bio summary"
+      },
+      {
+        "label": "Focus",
+        "href": "#focus",
+        "keywords": "what I'm building now",
+        "feature": "focus"
+      },
+      {
+        "label": "Experience",
+        "href": "#experience",
+        "keywords": "jobs resume internships chart"
+      },
+      {
+        "label": "Projects",
+        "href": "#projects",
+        "keywords": "work portfolio case studies",
+        "feature": "projects"
+      },
+      {
+        "label": "Toolkit",
+        "href": "#toolkit",
+        "keywords": "tools skills software",
+        "feature": "toolkit"
+      },
+      {
+        "label": "Story",
+        "href": "#story",
+        "keywords": "map journey hometown",
+        "feature": "journey"
+      },
+      {
+        "label": "Beyond",
+        "href": "#life",
+        "keywords": "hobbies sports volunteering",
+        "feature": "beyond"
+      },
+      {
+        "label": "Ask me",
+        "href": "#ask",
+        "keywords": "questions faq",
+        "feature": "ask"
+      }
+    ],
+    "commands": [
+      {
+        "label": "Replay the career chart",
+        "hint": "action",
+        "action": "replay-career"
+      },
+      {
+        "label": "Back to top",
+        "hint": "jump",
+        "href": "#top"
+      }
+    ],
+    "thresholds": {
+      "stats": 3,
+      "nowItems": 2,
+      "focusItems": 2,
+      "chartRoles": 3,
+      "projects": 2,
+      "toolkitTools": 5,
+      "mapStops": 3,
+      "mapMiles": 150,
+      "beyondItems": 3,
+      "askItems": 3
+    },
+    "features": {
+      "focus": true,
+      "toolkit": true,
+      "career": true,
+      "journey": true,
+      "mapBorders": true,
+      "beyond": true,
+      "ask": true,
+      "palette": true,
+      "now": true,
+      "field": true,
+      "scramble": true,
+      "motion": true
+    }
+  },
+  "copy": {
+    "about": {
+      "paragraphs": [
+        "I'm a Marketing student at University of Minnesota. This summer I interned on the analytics team at Northwind Outdoor, where I learned that the best marketing decision is usually hiding in a spreadsheet nobody opens.",
+        "I lead the Marketing Club, which grew from 25 to 60 members in a year after we started bringing in local founders as speakers.",
+        "Before college I worked as a shift lead at a coffee shop, which taught me more about people than any class."
+      ]
+    },
+    "career": {
+      "heading": "Experience, compounding",
+      "note": "Drag across the chart. Every role adds a role-month for each month it ran.",
+      "sliderLabel": "Career timeline, use arrow keys to move by month"
+    },
+    "experienceCopy": {
+      "heading": "Experience",
+      "resume": "View full résumé"
+    },
+    "footer": {
+      "line": "Designed and built with AI. Hosted on Vercel."
+    },
+    "intro": {
+      "title": "Marketing · Carlson School of Management, UMN",
+      "line": "I turn messy marketing data into decisions, and lead the student Marketing Club.",
+      "status": "{days} days building with AI · {projects} projects shipped"
+    },
+    "journey": {
+      "heading": "From Fargo to Minneapolis",
+      "note": "Step through it or press play.",
+      "play": "Play",
+      "milesLabel": "miles so far"
+    },
+    "life": {
+      "heading": "Beyond the classroom",
+      "text": "Outside of class I run trail half-marathons, volunteer with a youth soccer league and cook way too much on Sundays.",
+      "facts": [
+        {
+          "k": "Running",
+          "v": "Three trail half-marathons"
+        },
+        {
+          "k": "Volunteering",
+          "v": "Youth soccer coach since 2023"
+        },
+        {
+          "k": "Off the clock",
+          "v": "Cooking, hiking, film photography"
+        }
+      ]
+    },
+    "now": {
+      "heading": "Right now",
+      "updated": "Oct 2026",
+      "items": [
+        {
+          "k": "Studying",
+          "v": "Marketing at University of Minnesota, Class of 2028."
+        },
+        {
+          "k": "Leading",
+          "v": "Marketing Club: 60 members, a speaker every month."
+        },
+        {
+          "k": "Looking for",
+          "v": "A summer 2027 marketing analytics internship."
+        }
+      ]
+    },
+    "projectsCopy": {
+      "heading": "Projects"
+    }
+  },
+  "roles": [
+    {
+      "id": "analytics-intern",
+      "track": "internship",
+      "inChart": true,
+      "section": "experience",
+      "title": "Marketing analytics intern",
+      "org": "Northwind Outdoor Co.",
+      "place": "St. Paul, MN",
+      "start": "2026-05",
+      "end": "2026-08",
+      "summary": "Owned weekly campaign reporting for a 12-person marketing team.",
+      "points": [
+        "Rebuilt the weekly campaign dashboard in Excel, cutting report prep from 4 hours to 30 minutes.",
+        "Found a $40K/yr overspend on two underperforming ad channels and presented the fix to the CMO."
+      ],
+      "tags": [
+        "Excel",
+        "Google Analytics",
+        "Reporting"
+      ]
+    },
+    {
+      "id": "club",
+      "track": "leadership",
+      "inChart": true,
+      "section": "leadership",
+      "title": "President",
+      "org": "Marketing Club, University of Minnesota",
+      "place": "Minneapolis, MN",
+      "start": "2025-09",
+      "end": null,
+      "link": {
+        "label": "Club site",
+        "href": "https://example.com"
+      },
+      "summary": "Lead a 60-member student club and its six-person board.",
+      "points": [
+        "Grew membership from 25 to 60 in one year with a new speaker series."
+      ],
+      "tags": [
+        "Leadership",
+        "Events"
+      ]
+    },
+    {
+      "id": "barista",
+      "track": "work",
+      "inChart": true,
+      "section": "experience",
+      "title": "Shift lead",
+      "org": "Corner Coffee",
+      "place": "Minneapolis, MN",
+      "start": "2024-06",
+      "end": "2026-04",
+      "summary": "Ran closing shifts and trained new staff.",
+      "points": [],
+      "tags": [
+        "Operations",
+        "Training"
+      ]
+    },
+    {
+      "id": "school",
+      "track": "school",
+      "inChart": true,
+      "section": "education",
+      "title": "BS, Marketing",
+      "org": "University of Minnesota",
+      "place": "Minneapolis, MN",
+      "start": "2024-09",
+      "end": null,
+      "summary": "3.8 GPA, Dean's List. Class of 2028.",
+      "points": [],
+      "tags": [
+        "Marketing",
+        "Statistics"
+      ]
+    }
+  ],
+  "stats": [
+    {
+      "count": 3.8,
+      "decimals": 1,
+      "label": "GPA"
+    },
+    {
+      "count": 60,
+      "label": "Club members I lead"
+    },
+    {
+      "count": 40,
+      "prefix": "$",
+      "suffix": "K",
+      "label": "Yearly overspend I found"
+    },
+    {
+      "liveDaysSince": "2026-06-01",
+      "label": "Days building with AI"
+    }
+  ],
+  "tracks": {
+    "school": "School",
+    "work": "Work",
+    "internship": "Internships",
+    "leadership": "Leadership",
+    "sport": "Sport"
+  },
+  "stops": [
+    {
+      "id": "home",
+      "label": "below",
+      "place": "Fargo, North Dakota",
+      "lat": 46.877,
+      "lon": -96.79,
+      "when": "Growing up",
+      "title": "Home",
+      "text": "Where I grew up and started working at sixteen."
+    },
+    {
+      "id": "college",
+      "label": "above",
+      "place": "Minneapolis, Minnesota",
+      "lat": 44.974,
+      "lon": -93.234,
+      "when": "Sept 2024",
+      "title": "University of Minnesota",
+      "text": "Started my Marketing degree and joined the Marketing Club.",
+      "photo": "headshot"
+    },
+    {
+      "id": "internship",
+      "label": "right",
+      "place": "St. Paul, Minnesota",
+      "lat": 44.954,
+      "lon": -93.09,
+      "when": "Summer 2026",
+      "title": "Northwind Outdoor",
+      "text": "Marketing analytics intern."
+    }
+  ],
+  "photos": {
+    "headshot": {
+      "src": "",
+      "alt": "Jordan Example, smiling, in a navy blazer",
+      "w": 900,
+      "h": 900
+    },
+    "one": {
+      "src": "",
+      "alt": "",
+      "w": 1600,
+      "h": 1200
+    },
+    "two": {
+      "src": "",
+      "alt": "",
+      "w": 1600,
+      "h": 1200
+    },
+    "three": {
+      "src": "",
+      "alt": "",
+      "w": 1600,
+      "h": 1200
+    }
+  },
+  "gallery": {
+    "keys": [
+      "one",
+      "two",
+      "three"
+    ]
+  },
+  "ask": {
+    "heading": "Ask me anything (almost)",
+    "note": "Pick a question. The answers are mine, written ahead of time.",
+    "items": [
+      {
+        "q": "What do you do right now?",
+        "a": "I study Marketing at University of Minnesota, lead the 60-member Marketing Club, and I'm looking for a summer 2027 analytics internship.",
+        "link": {
+          "label": "See my experience",
+          "href": "#experience"
+        }
+      },
+      {
+        "q": "What's your best work so far?",
+        "a": "The reporting dashboard at Northwind: it took a four-hour weekly report down to thirty minutes and surfaced $40K a year in wasted ad spend.",
+        "link": {
+          "label": "See the projects",
+          "href": "#projects"
+        }
+      },
+      {
+        "q": "What are you looking for?",
+        "a": "A marketing analytics internship where I get to work with real data. Message me on LinkedIn.",
+        "link": {
+          "label": "Connect on LinkedIn",
+          "href": "https://www.linkedin.com/in/your-handle"
+        }
+      }
+    ]
+  },
+  "projects": [
+    {
+      "title": "Campaign reporting dashboard",
+      "when": "Summer 2026",
+      "for": "Northwind Outdoor",
+      "text": "Replaced a weekly copy-paste report with one Excel dashboard fed by Google Analytics and ad-platform exports.",
+      "result": "4 hours → 30 minutes a week",
+      "tags": [
+        "Excel",
+        "Google Analytics",
+        "Automation"
+      ]
+    },
+    {
+      "title": "Club speaker series",
+      "when": "2025–26",
+      "for": "Marketing Club",
+      "text": "Booked eight local founders and marketers, ran the promo and grew attendance every month.",
+      "result": "25 → 60 members",
+      "tags": [
+        "Events",
+        "Outreach"
+      ]
+    },
+    {
+      "title": "This site",
+      "when": "Oct 2026",
+      "for": "Personal",
+      "text": "Built with Claude Code from a starter kit: config-driven, no framework, with a career chart, map and command menu.",
+      "result": "Press K anywhere",
+      "tags": [
+        "Claude Code",
+        "HTML/CSS/JS",
+        "Vercel"
+      ]
+    }
+  ],
+  "focus": {
+    "startedOn": "2026-06-01",
+    "label": "Focus",
+    "lead": "{days} days and counting since I started building with AI. {projects} projects shipped so far.",
+    "timeline": [
+      {
+        "when": "Jun 2026",
+        "text": "Started using Claude every day for school and work."
+      },
+      {
+        "when": "Summer",
+        "text": "Automated campaign reporting at Northwind Outdoor."
+      },
+      {
+        "when": "Fall 2026",
+        "text": "Built this site and the Marketing Club's sign-up page with Claude Code."
+      },
+      {
+        "when": "Now",
+        "text": "Teaching club members to build their own portfolio sites."
+      }
+    ],
+    "club": {
+      "heading": "example.com",
+      "note": "A site I built. Live, scroll inside it.",
+      "url": ""
+    }
+  },
+  "toolkit": {
+    "heading": "Toolkit",
+    "more": "& more",
+    "groups": [
+      {
+        "label": "AI",
+        "tools": [
+          {
+            "name": "Claude",
+            "logo": "claude",
+            "brand": "#D97757"
+          },
+          {
+            "name": "ChatGPT",
+            "logo": "openai",
+            "brand": "#ffffff"
+          },
+          {
+            "name": "Gemini",
+            "logo": "googlegemini",
+            "brand": "#8E75B2"
+          }
+        ]
+      },
+      {
+        "label": "Analysis & office",
+        "tools": [
+          {
+            "name": "Excel",
+            "logo": "microsoftexcel",
+            "brand": "#33C481"
+          },
+          {
+            "name": "PowerPoint",
+            "logo": "microsoftpowerpoint",
+            "brand": "#ED6C47"
+          },
+          {
+            "name": "Google Sheets",
+            "logo": "googlesheets",
+            "brand": "#34A853"
+          },
+          {
+            "name": "Google Analytics",
+            "mark": "GA",
+            "brand": "#F9AB00"
+          }
+        ]
+      },
+      {
+        "label": "Design & build",
+        "tools": [
+          {
+            "name": "Canva",
+            "logo": "canva",
+            "brand": "#00C4CC"
+          },
+          {
+            "name": "GitHub",
+            "logo": "github",
+            "brand": "#ffffff"
+          },
+          {
+            "name": "Vercel",
+            "logo": "vercel",
+            "brand": "#ffffff"
+          }
+        ]
+      }
+    ]
+  }
+}

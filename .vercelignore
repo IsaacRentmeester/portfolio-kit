@@ -8,8 +8,14 @@ my-info
 dist
 services/*/README.md
 * 2.*
-chat-template
 PROMPT.md
 MAINTAINING.md
 share
 assets/social
+AGENTS.md
+GEMINI.md
+builder.html
+builder
+chat
+.claude
+.gemini

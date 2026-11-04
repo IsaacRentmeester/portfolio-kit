@@ -55,5 +55,5 @@ export const life = {
 };
 
 export const footer = {
-  line: "Designed and built with Claude Code. Hosted on Vercel.",
+  line: "Designed and built with AI. Hosted on Vercel.",
 };

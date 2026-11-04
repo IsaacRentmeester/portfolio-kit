@@ -1,6 +1,6 @@
 # Put your portfolio on LinkedIn
 
-Fastest: tell Claude **"add it to my LinkedIn"** and it does it for you (see the end of this page).
+Fastest: tell your AI **"add it to my LinkedIn"**. It walks you through it, or does it for you if it can use a browser (see the end of this page).
 
 LinkedIn can't host a website or an HTML file. It shows **links**. So your site needs a public link
 first (Step 6 of the build), then you place that link in three spots. About 2 minutes, on a computer.
@@ -28,18 +28,19 @@ No **Website** field there? Use **Contact info** (under your name) → pencil �
 Posts get your link in front of your network once. Keep it short and human, for example:
 
 > I built a personal site that tells my story better than a one-page résumé can: my experience,
-> projects, and a map of how I got here. Made it with Claude.
+> projects, and a map of how I got here. Made it with AI.
 > 👉 https://jordan-example.vercel.app
 > Students: ask me how, happy to share the kit.
 
 Tip: LinkedIn shows posts with outside links a bit less. Some people put the link in the first comment instead.
 
-## Let Claude do it
+## Let your AI do it
 
-Just say **"add it to my LinkedIn"**. In the Claude desktop app, Claude opens LinkedIn in its built-in
-browser pane (or uses Claude in Chrome if you have it). You sign in yourself; Claude then adds the Featured
-link and the intro link, and can draft a post. It **stops to ask before each Save or Post** and shows you
-a screenshot at the end. Claude never types your password and never changes anything else.
+Just say **"add it to my LinkedIn"**. If your AI can control a web browser you're signed in to (the Claude
+desktop app's browser pane, Claude in Chrome, ChatGPT agent mode, Gemini in Chrome), it opens LinkedIn,
+adds the Featured link and the intro link, and can draft a post. It should **stop to ask before each Save
+or Post**. You sign in yourself; never give an AI your password. If your AI can't use a browser, it gives
+you the steps above instead.
 
 ## Preview card
 
