@@ -21,8 +21,12 @@ const state = { data: null, photos: {}, html: "" }; // photos: key -> { dataUrl,
 // ---------- Step 1: copy the prompt ----------
 $("#copy-prompt").addEventListener("click", async () => {
   const ok = await copy(KIT.prompt);
-  flash($("#copy-prompt"), ok ? "Copied ✓" : "Select the text below and copy it");
-  if (!ok) $("#prompt-fallback").hidden = false;
+  flash($("#copy-prompt"), ok ? "Copied ✓" : "Press Cmd/Ctrl+C to copy");
+  if (!ok) { // open the prompt with everything selected, so one keyboard shortcut copies it
+    $("#prompt-fallback").open = true;
+    $("#prompt-text").focus();
+    $("#prompt-text").select();
+  }
 });
 $("#prompt-text").value = KIT.prompt;
 
@@ -187,8 +191,18 @@ $("#download").addEventListener("click", () => {
 });
 
 // ---------- helpers ----------
+// Clipboard API first; then the older copy command (works where the API is blocked, e.g. some school laptops).
 async function copy(text) {
-  try { await navigator.clipboard.writeText(text); return true; } catch { return false; }
+  try { await navigator.clipboard.writeText(text); return true; } catch {}
+  const t = Object.assign(document.createElement("textarea"), { value: text });
+  t.setAttribute("readonly", "");
+  t.style.cssText = "position:fixed;top:0;left:0;opacity:0";
+  document.body.append(t);
+  t.select();
+  let ok = false;
+  try { ok = document.execCommand("copy"); } catch {}
+  t.remove();
+  return ok;
 }
 function flash(btn, text) {
   const old = btn.dataset.label ?? btn.textContent;
