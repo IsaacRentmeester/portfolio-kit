@@ -54,7 +54,7 @@ chat/               way A: full-prompt.md (the prompt), data-guide.md, example-d
 AGENTS.md           way B: the step-by-step playbook any AI agent follows
 CLAUDE.md GEMINI.md  pointers to AGENTS.md (Claude and Gemini look for these names)
 PROMPT.md           prompts to copy, and a message to send friends
-guides/             deploy-vercel.md, add-to-linkedin.md (click-by-click)
+guides/             deploy-vercel.md, add-to-linkedin.md, club-session.md (running it with a group)
 engine/ components/ controllers/ services/ styles/   the site engine. No need to touch.
 tools/              check.mjs (pre-publish check), build-single.mjs (one-file site; --builder rebuilds builder.html)
 ```

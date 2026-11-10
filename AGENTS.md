@@ -212,9 +212,8 @@ Same live `yourname.vercel.app` result, no command line. Good if `npx` gives tro
    Never drop the whole kit folder: Vercel Drop would publish `my-info/` (the private résumé) too.
 2. They go to **vercel.com/drop**, sign in (free), drag the zip (or the `-site` folder) onto the page, pick a
    project name like `firstname-lastname`, and deploy. They get a `.vercel.app` link.
-3. Put that URL in `url` in `config/site.config.js` (the one-file build reads it for its link-preview tags;
-   also update `index.html` / sitemap / robots if they dropped the folder), run the check, rebuild, and
-   drop again so the LinkedIn preview card points at the right place.
+3. Put that URL in `url` in `config/site.config.js` (the one-file build reads it for its link-preview tags),
+   rebuild, and drop the new zip on the same project so the LinkedIn preview card points at the right place.
 4. Updates later = rebuild and drop again onto the same project.
 
 The same single file also works anywhere that hosts HTML (netlify.com/drop, GitHub Pages), or can be
