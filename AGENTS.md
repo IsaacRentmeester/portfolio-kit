@@ -85,7 +85,8 @@ Tools:
   `.claude/launch.json`). Needs Node.js 18+; if it's missing, help them install it from nodejs.org.
 - `node tools/check.mjs` → pre-publish check. Fails on leftover sample text, bad dates, missing files,
   phone numbers, a broken link preview. Must pass before publishing.
-- `node tools/build-single.mjs` → the whole site as ONE html file in `dist/` (for Vercel Drop or sharing as a file).
+- `node tools/build-single.mjs` → the whole site as ONE file: `dist/<name>-site/index.html` plus
+  `dist/<name>-site.zip` (for Vercel Drop). The file must stay named `index.html`, or the main link 404s.
 
 ---
 
@@ -204,10 +205,12 @@ Best for LinkedIn: a clean link, a proper preview card, easy to update later.
 
 ### Option B: Drag and drop, no terminal (Vercel Drop)
 Same live `yourname.vercel.app` result, no command line. Good if `npx` gives trouble.
-1. Run `node tools/build-single.mjs` → `dist/<name>.html` (everything inlined: CSS, JS, photos).
+1. Run `node tools/build-single.mjs` → `dist/<name>-site.zip` (one `index.html` inside, everything inlined:
+   CSS, JS, photos). Drag the zip, or the `dist/<name>-site` folder. Never a renamed .html file: Vercel only
+   serves `index.html` at the main link.
    Set `resume` to a full https link or `""` first, since a PDF can't ride along.
-   (Or skip the build and drop the whole kit folder: then the résumé PDF works too.)
-2. They go to **vercel.com/drop**, sign in (free), drag the file (or folder) onto the page, pick a
+   Never drop the whole kit folder: Vercel Drop would publish `my-info/` (the private résumé) too.
+2. They go to **vercel.com/drop**, sign in (free), drag the zip (or the `-site` folder) onto the page, pick a
    project name like `firstname-lastname`, and deploy. They get a `.vercel.app` link.
 3. Put that URL in `url` in `config/site.config.js` (the one-file build reads it for its link-preview tags;
    also update `index.html` / sitemap / robots if they dropped the folder), run the check, rebuild, and

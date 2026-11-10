@@ -1,9 +1,10 @@
-// Builder app: the any-chatbot route. Paste the JSON a chatbot wrote, add photos, preview, download one HTML file.
+// Builder app: the any-chatbot route. Paste the JSON a chatbot wrote, add photos, preview, download a ready-to-drop zip.
 // Uses the same services as the folder route: validate (checks) and page (assembles the site).
 // Kit data (engine, CSS, logos, sample, prompt) is embedded at build time as window.__KIT (tools/build-single.mjs --builder).
 // Errors show in the page; console messages start with [builder].
 import { validate } from "../services/validate/index.js";
 import { assemblePage } from "../services/page/index.js";
+import { createZip } from "../services/zip/index.js";
 
 const KIT = window.__KIT;
 const $ = (s) => document.querySelector(s);
@@ -168,15 +169,21 @@ document.querySelectorAll("[data-width]").forEach((b) => b.addEventListener("cli
 }));
 
 // ---------- Step 5: download ----------
+// A zip with index.html inside: Vercel serves index.html at the main link (any other file name 404s there).
 $("#download").addEventListener("click", () => {
   if (!state.html) return;
   const n = state.data.site?.name ?? {};
-  const file = `${n.first ?? "my"}-${n.last ?? "portfolio"}`.toLowerCase().replace(/[^a-z0-9-]+/g, "-") + ".html";
-  const a = Object.assign(document.createElement("a"), { href: URL.createObjectURL(new Blob([state.html], { type: "text/html" })), download: file });
+  const base = `${n.first ?? "my"}-${n.last ?? "portfolio"}`.toLowerCase().replace(/[^a-z0-9-]+/g, "-").replace(/^-|-$/g, "") || "my-portfolio";
+  const file = `${base}-site.zip`;
+  const zip = createZip([{ name: "index.html", data: state.html }]);
+  const a = Object.assign(document.createElement("a"), { href: URL.createObjectURL(new Blob([zip], { type: "application/zip" })), download: file });
+  document.body.append(a);
   a.click();
+  a.remove();
   setTimeout(() => URL.revokeObjectURL(a.href), 4000);
   $("#after-download").hidden = false;
   $("#file-name").textContent = file;
+  $("#folder-name").textContent = `${base}-site`;
 });
 
 // ---------- helpers ----------

@@ -16,7 +16,7 @@ Gemini CLI, Cursor, Copilot).
 > 2. Double-click builder.html → "Copy the prompt" → paste it into a new ChatGPT, Gemini or Claude chat
 >    with your résumé and LinkedIn PDF attached. Your AI interviews you and writes your site.
 > 3. Paste what it writes back into the builder, add photos, preview, and download your site.
-> 4. Drag the file onto vercel.com/drop to put it online for free, then ask your AI "add it to my LinkedIn".
+> 4. Drag the downloaded zip onto vercel.com/drop to put it online for free, then ask your AI "add it to my LinkedIn".
 >
 > Have the Claude desktop app, Codex or Gemini CLI? Open the folder in it and type "hi" instead.
 > It ships in UMN maroon and gold, and your AI can change the colours.
@@ -33,7 +33,7 @@ Gemini CLI, Cursor, Copilot).
 5. Paste that into step 2 of the builder → **Check and preview**. If it lists problems, click
    **Copy this list**, paste it back to your AI, and paste its new JSON.
 6. Add photos, check the preview at desktop and phone width, **Download my site**.
-7. Drag the downloaded file onto **vercel.com/drop** (free sign-in). Give your AI the link, paste the
+7. Drag the downloaded `…-site.zip` onto **vercel.com/drop** (free sign-in; if your Mac unzipped it, drag the folder). Give your AI the link, paste the
    updated JSON, download again and drop it on the same project.
 8. Ask your AI: **"Add it to my LinkedIn."**
 

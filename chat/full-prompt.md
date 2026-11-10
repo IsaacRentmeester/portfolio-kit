@@ -65,9 +65,9 @@ STEP 3: CHANGES
 When I ask for changes, send the full updated JSON block again (not just the changed part).
 
 STEP 4: PUBLISH
-Walk me through it: in the builder click "Download my site", go to vercel.com/drop, sign in (free), drag the
-downloaded file onto the page, name the project firstname-lastname, deploy. When I give you my .vercel.app
-link, put it in site.url and send the full JSON again. I'll re-download and drop it again on the same
+Walk me through it: in the builder click "Download my site" (it saves a .zip; if my Mac unzips it, I use the
+folder instead), go to vercel.com/drop, sign in (free), drag the zip onto the page, name the project firstname-lastname, deploy. When I give you my .vercel.app
+link, put it in site.url and send the full JSON again. I'll re-download and drop the new zip on the same
 project so link previews work.
 
 STEP 5: LINKEDIN

@@ -1,5 +1,7 @@
 // Builds the one-file outputs. Needs internet once: it runs esbuild through npx.
-//   node tools/build-single.mjs             → dist/<first>-<last>.html: your site as ONE file (for vercel.com/drop)
+//   node tools/build-single.mjs             → dist/<first>-<last>-site/index.html + dist/<first>-<last>-site.zip:
+//                                             your site as ONE file, ready for vercel.com/drop (the file must be
+//                                             called index.html or the main link shows 404)
 //   node tools/build-single.mjs --builder   → builder.html + chat/full-prompt.md + chat/example-data.json
 //                                             (the any-chatbot route; run after changing the engine, styles or sample)
 // The page itself is assembled by services/page (shared with builder.html), checks come from services/validate.
@@ -73,9 +75,11 @@ if (builderMode) {
 
   const html = assemblePage({ data, assets, css, engineJs: engineJs.replace(/video src="\$\{[^}]+\}"/g, "video") });
   const name = `${site.name.first}-${site.name.last}`.toLowerCase().replace(/[^a-z0-9-]+/g, "-");
-  await mkdir(root + "dist", { recursive: true });
-  await writeFile(root + `dist/${name}.html`, html);
+  const { createZip } = await import(root + "services/zip/index.js");
+  await mkdir(root + `dist/${name}-site`, { recursive: true });
+  await writeFile(root + `dist/${name}-site/index.html`, html);
+  await writeFile(root + `dist/${name}-site.zip`, createZip([{ name: "index.html", data: html }]));
   const mb = (Buffer.byteLength(html) / 1048576).toFixed(1);
-  console.log(`[single] wrote dist/${name}.html (${mb} MB, ${Object.keys(assets).length} images inlined)`);
+  console.log(`[single] wrote dist/${name}-site/index.html and dist/${name}-site.zip (${mb} MB, ${Object.keys(assets).length} images inlined)`);
   if (mb > 8) console.warn("[single] that's big: shrink photos to ~1600px / under 400 KB each");
 }

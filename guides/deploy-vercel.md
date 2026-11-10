@@ -6,9 +6,10 @@ Your AI can walk you through any of them. You only do the sign-ups yourself.
 ## Way 1: Drag and drop (no terminal)
 
 1. Go to **vercel.com/drop** and sign up / log in (free Hobby plan; "Continue with GitHub" or email).
-2. Ask your AI: *"Build the single file"*. It makes `dist/<your-name>.html`.
-   (Or just use the whole portfolio folder.)
-3. Drag the file or folder onto the page. Name the project `firstname-lastname`. Deploy.
+2. Make your site file. Builder (any AI chat): click **Download my site** to get `<your-name>-site.zip`.
+   Folder route: ask your AI *"Build the single file"*. It makes `dist/<your-name>-site.zip`.
+   Never drop the whole kit folder: it would publish `my-info/` (your private résumé) too.
+3. Drag the zip onto the page (or, if your Mac unzipped it, the `-site` folder). Name the project `firstname-lastname`. Deploy.
 4. Copy your `.vercel.app` link and tell your AI, so it can fix the link-preview tags, then drop again.
 
 To update later: change things with your AI, rebuild, drop onto the same project again.
