@@ -1,0 +1,17 @@
+{
+  "v": 4,
+  "createdOnFiles": { "v": 1, "at": "2026-11-10T09:00:00Z" },
+  "lists": "css",
+  "title": "Build Your Portfolio Site",
+  "order": ["cover", "get-kit", "ai", "build", "live", "linkedin", "stuck"],
+  "sections": {
+    "intro": { "description": "What this is and what to bring.", "start": "cover" },
+    "steps": { "description": "The five steps, one slide each.", "start": "get-kit" },
+    "help": { "description": "Quick fixes when something goes wrong.", "start": "stuck" }
+  },
+  "faces": {
+    "ibm-plex-sans": { "family": "IBM Plex Sans", "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap" },
+    "ibm-plex-mono": { "family": "IBM Plex Mono", "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap" }
+  },
+  "designSystems": []
+}
