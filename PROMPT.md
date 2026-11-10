@@ -12,20 +12,21 @@ Gemini CLI, Cursor, Copilot).
 > and put it on your LinkedIn. It works with ChatGPT, Gemini or Claude, and your AI does most of the work.
 > You'll need your résumé, your LinkedIn saved as a PDF, a headshot, and about 45 minutes.
 >
-> 1. Download it: https://github.com/IsaacRentmeester/portfolio-kit/archive/refs/heads/main.zip and unzip it.
-> 2. Double-click builder.html → "Copy the prompt" → paste it into a new ChatGPT, Gemini or Claude chat
+> 1. Open the builder: https://isaacrentmeester.github.io/portfolio-kit/builder.html
+> 2. Click "Copy the prompt" → paste it into a new ChatGPT, Gemini or Claude chat
 >    with your résumé and LinkedIn PDF attached. Your AI interviews you and writes your site.
 > 3. Paste what it writes back into the builder, add photos, preview, and download your site.
 > 4. Drag the downloaded zip onto vercel.com/drop to put it online for free, then ask your AI "add it to my LinkedIn".
 >
-> Have the Claude desktop app, Codex or Gemini CLI? Open the folder in it and type "hi" instead.
+> Have the Claude desktop app, Codex or Gemini CLI? Download the kit
+> (https://github.com/IsaacRentmeester/portfolio-kit/archive/refs/heads/main.zip), open the folder in it and type "hi".
 > It ships in UMN maroon and gold, and your AI can change the colours.
 
 ---
 
 ## 2. Any AI chat (ChatGPT, Gemini, Claude, Copilot), no install
 
-1. Double-click **`builder.html`** in the kit (it opens in your browser).
+1. Open the builder: https://isaacrentmeester.github.io/portfolio-kit/builder.html (or double-click **`builder.html`** in the downloaded kit).
 2. Click **Copy the prompt**. (Or open `chat/full-prompt.md` and copy all of it.)
 3. Start a new chat in ChatGPT, Gemini or Claude. Paste the prompt and attach your résumé and your
    LinkedIn PDF (LinkedIn profile → More → Save to PDF).

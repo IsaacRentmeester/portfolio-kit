@@ -14,6 +14,8 @@ so the page is never padded.
 
 ## Get the kit
 
+**Just want the builder?** Open https://isaacrentmeester.github.io/portfolio-kit/builder.html. Nothing to download.
+
 **[Download the zip](https://github.com/IsaacRentmeester/portfolio-kit/archive/refs/heads/main.zip)** and unzip it
 (the folder is `portfolio-kit-main`). Or on GitHub: **Use this template → Create a new repository**.
 
@@ -30,7 +32,7 @@ so the page is never padded.
 | | **A. Any AI chat** (easiest) | **B. AI with folder access** (most features) |
 |---|---|---|
 | Works with | ChatGPT, Gemini, Claude, Copilot, any chat | Claude desktop app (Code tab) or Claude Code, ChatGPT Codex, Gemini CLI, Cursor, Copilot |
-| Start | Double-click **`builder.html`** → **Copy the prompt** → paste it into a new chat with your résumé + LinkedIn PDF | Open this folder in the tool and type **hi** |
+| Start | Open the [builder](https://isaacrentmeester.github.io/portfolio-kit/builder.html) (or double-click **`builder.html`**) → **Copy the prompt** → paste it into a new chat with your résumé + LinkedIn PDF | Open this folder in the tool and type **hi** |
 | Then | Your AI interviews you and writes your site's text as one block of data. Paste it into the builder, add photos, preview, download | The AI reads the playbook (`AGENTS.md`), asks for your résumé and LinkedIn, and edits the site for you |
 | Photos | ✅ added in the builder | ✅ |
 | Résumé button, link-preview image | Résumé must be a link; no preview image | ✅ both |

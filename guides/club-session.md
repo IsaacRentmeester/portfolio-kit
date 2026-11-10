@@ -3,8 +3,8 @@
 For whoever is leading a room through the kit. Members leave with a live site on their LinkedIn.
 
 ## Before the meeting
-- Put the QR code (`assets/social/kit-download-qr.png`) or this link on the first slide:
-  https://github.com/IsaacRentmeester/portfolio-kit/archive/refs/heads/main.zip
+- Put the QR code (`assets/social/builder-qr.png`) or this link on the first slide. It opens the builder
+  straight in the browser, nothing to download: https://isaacrentmeester.github.io/portfolio-kit/builder.html
 - Tell people to bring a **laptop** (phones can't unzip or drag files easily), their **résumé PDF**, and to be
   logged in to **ChatGPT, Gemini or Claude** (free accounts work).
 - Do one run yourself the day before so you've seen every screen.
@@ -13,7 +13,7 @@ For whoever is leading a room through the kit. Members leave with a live site on
 | Time | Step | What people do |
 |---|---|---|
 | 0–5 | Demo | Show a finished site (yours) and its LinkedIn Featured card. |
-| 5–10 | Get the kit | Scan the QR / open the link, unzip, double-click **builder.html**. |
+| 5–10 | Open the builder | Scan the QR / open the link on their laptop. (Offline? Download the kit zip and double-click **builder.html**.) |
 | 10–15 | LinkedIn PDF | LinkedIn on a laptop → their profile → **More** → **Save to PDF**. |
 | 15–30 | Talk to the AI | Builder step 1 **Copy the prompt** → new chat → paste + attach résumé and LinkedIn PDF → answer its questions → approve the outline. |
 | 30–40 | Build | Paste the AI's JSON into builder step 2 → **Check and preview** → fix anything it lists → add photos. |
